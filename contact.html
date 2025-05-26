@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Reoo XYZ – Luxury Digital Marketing Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0B0C10;
+            color: #f1f1f1;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2.section-title {
+            color: #D4AF37;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Contact Section for iframe */
+        .contact-form-container {
+            background-color: #1F2833;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-form-container iframe {
+            width: 100%;
+            height: 500px; /* Adjust height as needed for the form */
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* Styling for the submit button when the iframe is used
+           This button will trigger the popup logic
+        */
+        .trigger-popup-btn {
+            background-color: #D4AF37;
+            color: #000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 20px; /* Space below the iframe */
+        }
+
+        .trigger-popup-btn:hover {
+            background-color: #b38f30;
+            transform: translateY(-2px);
+        }
+
+
+        /* Popup Styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0s, opacity 0.3s;
+        }
+
+        .popup-overlay.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .popup-content {
+            background-color: #1F2833;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            max-width: 400px;
+            transform: scale(0.9);
+            transition: transform 0.3s ease-out;
+        }
+
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+        }
+
+        .popup-content h3 {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .popup-content p {
+            font-size: 1.1rem;
+            color: #f1f1f1;
+            line-height: 1.6;
+        }
+
+        .success-animation {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            position: relative;
+            border-radius: 50%;
+            box-sizing: border-box;
+            border: 4px solid #D4AF37;
+            overflow: hidden;
+            animation: pulse-glow 1.5s infinite alternate; /* Continuous glowing effect */
+        }
+
+        .success-animation .checkmark {
+            width: 40px;
+            height: 70px;
+            border-right: 8px solid #D4AF37;
+            border-bottom: 8px solid #D4AF37;
+            transform: rotate(45deg);
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -15px;
+            margin-top: -35px;
+            opacity: 0;
+            animation: draw-checkmark 0.5s forwards 0.3s ease-out;
+        }
+
+        @keyframes draw-checkmark {
+            0% {
+                height: 0;
+                opacity: 0;
+            }
+            100% {
+                height: 70px;
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse-glow {
+            0% {
+                box-shadow: 0 0 0px rgba(212, 175, 55, 0.4);
+            }
+            100% {
+                box-shadow: 0 0 25px rgba(212, 175, 55, 0.8);
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0B0C10;
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid #1F2833;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 15px;
+            }
+            h2.section-title {
+                font-size: 2rem;
+            }
+            .contact-form-container {
+                padding: 20px;
+            }
+            .contact-form-container iframe {
+                height: 400px; /* Adjust height for smaller screens */
+            }
+        }
+        @media (max-width: 480px) {
+            h2.section-title {
+                font-size: 1.8rem;
+            }
+            .contact-form-container iframe {
+                height: 350px; /* Further adjust height for mobile */
+            }
+            .popup-content {
+                padding: 30px 20px;
+            }
+            .popup-content h3 {
+                font-size: 1.5rem;
+            }
+            .popup-content p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section id="contact-us">
+        <h2 class="section-title">Connect With Us</h2>
+        <div class="contact-form-container">
+            <iframe src="https://surveyheart.com/form/68346db56a5c2806fdb86a74"></iframe>
+            <button class="trigger-popup-btn" id="triggerPopup">Submit Form</button>
+        </div>
+    </section>
+
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup-content">
+            <div class="success-animation">
+                <div class="checkmark"></div>
+            </div>
+            <h3>Thank you for reaching out!</h3>
+            <p>We’ve received your details and will connect with you soon.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2025 Reoo XYZ. All rights reserved.
+    </footer>
+
+    <script>
+        // Trigger popup on button click
+        document.getElementById('triggerPopup').addEventListener('click', function() {
+            const popupOverlay = document.getElementById('popupOverlay');
+            popupOverlay.classList.add('active');
+
+            // Optional: Hide the popup after a few seconds
+            setTimeout(() => {
+                popupOverlay.classList.remove('active');
+            }, 5000); // Popup will disappear after 5 seconds
+        });
+
+        // Close popup if clicked outside
+        document.getElementById('popupOverlay').addEventListener('click', function(event) {
+            if (event.target === this) {
+                this.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

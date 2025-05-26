@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms and Conditions – Reoo XYZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles from homepage */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0B0C10;
+            color: #f1f1f1;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2.section-title {
+            color: #D4AF37;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Header specific styles for terms.html */
+        .header {
+            background-color: #0B0C10;
+            padding: 20px 20px;
+            border-bottom: 1px solid #1F2833;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #D4AF37;
+            text-decoration: none;
+            position: relative;
+        }
+
+        .header .logo .animated-letter {
+            display: inline-block;
+            animation: pulse-gold 2s infinite alternate;
+        }
+
+        @keyframes pulse-gold {
+            0% {
+                color: #D4AF37;
+                text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+            }
+            100% {
+                color: #FFD700; /* Slightly brighter gold */
+                text-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+            }
+        }
+
+        .header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .header nav ul li a {
+            color: #f1f1f1;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s, border-bottom 0.3s;
+            padding-bottom: 3px;
+        }
+
+        .header nav ul li a:hover {
+            color: #D4AF37;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        /* Terms and Conditions specific styles */
+        .terms-content {
+            padding: 40px 20px;
+            background-color: #1F2833;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .terms-content h1 {
+            font-size: 2.8rem;
+            color: #D4AF37;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #D4AF37;
+        }
+
+        .terms-content p {
+            margin-bottom: 20px;
+            line-height: 1.7;
+            font-size: 1.05rem;
+            color: #e0e0e0;
+        }
+
+        .terms-content h3 {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+            padding-bottom: 5px;
+        }
+
+        .terms-content ol {
+            list-style-type: none; /* Remove default numbering */
+            padding-left: 0;
+        }
+
+        .terms-content ol li {
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 1rem;
+            position: relative;
+            padding-left: 35px; /* Space for custom number */
+        }
+
+        .terms-content ol li:last-child {
+            margin-bottom: 0;
+        }
+
+        .terms-content ol li strong {
+            color: #D4AF37;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .terms-content ol li::before {
+            content: counter(list-item) "."; /* Use counter for custom numbering */
+            counter-increment: list-item;
+            color: #D4AF37;
+            font-weight: 700;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2rem;
+            width: 30px;
+            text-align: right;
+        }
+
+        /* Footer from homepage */
+        .footer {
+            background-color: #0B0C10;
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid #1F2833;
+        }
+
+        /* Responsive adjustments from homepage */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .header nav ul {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            .header nav ul li a {
+                padding: 5px 0;
+            }
+            .terms-content h1 {
+                font-size: 2rem;
+            }
+            .terms-content h3 {
+                font-size: 1.5rem;
+            }
+            .terms-content ol li {
+                padding-left: 30px;
+                font-size: 0.95rem;
+            }
+            .terms-content ol li::before {
+                font-size: 1.1rem;
+                width: 25px;
+            }
+            section {
+                padding: 50px 15px;
+            }
+        }
+        @media (max-width: 480px) {
+            .header .logo {
+                font-size: 2rem;
+            }
+            .terms-content h1 {
+                font-size: 1.8rem;
+            }
+            .terms-content p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="index.html" class="logo">Re<span class="animated-letter">o</span>o XYZ</a>
+        <nav>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
+                <li><a href="refund.html">Refund Policy</a></li>
+                <li><a href="terms.html">Terms & Conditions</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="terms-and-conditions">
+        <div class="terms-content">
+            <h1>Terms and Conditions</h1>
+            <p>By using our services, you agree to the following Terms and Conditions. Please read them carefully.</p>
+
+            <ol>
+                <li>
+                    <strong>Services Provided</strong>
+                    <p>reoo.xyz agrees to provide Facebook advertising and lead generation services as per the agreed terms in the signed contract or proposal. Services may include campaign setup, ad creation, audience targeting, ad management, conversion tracking, and performance reporting.</p>
+                </li>
+                <li>
+                    <strong>Payment</strong>
+                    <p>The Client agrees to pay the agreed fees for services rendered. Payment terms and schedule will be detailed in the contract or proposal. All fees are non-refundable, regardless of results. Package upgrades are allowed within 15 days of purchase, but no price adjustment or refund will be given for previously paid packages.</p>
+                </li>
+                <li>
+                    <strong>Client’s Use of Facebook-Generated Leads</strong>
+                    <p>The Client is solely responsible for using the leads generated through Facebook ads. reoo.xyz will not be held accountable for any fraudulent, illegal, or unethical activities conducted by the Client using these leads.</p>
+                </li>
+                <li>
+                    <strong>Indemnification</strong>
+                    <p>The Client agrees to indemnify and hold reoo.xyz harmless from any claims, damages, or liabilities arising from the Client’s use of leads for scams or unethical activities.</p>
+                </li>
+                <li>
+                    <strong>Client Responsibilities</strong>
+                    <p>The Client agrees to provide all necessary access, creative materials, landing pages, and other assets required for campaign execution.</p>
+                </li>
+                <li>
+                    <strong>Compliance with Applicable Laws</strong>
+                    <p>reoo.xyz will follow Facebook’s advertising policies and best practices. However, the Client is solely responsible for ensuring ad content and activities comply with all applicable laws and industry standards.</p>
+                </li>
+                <li>
+                    <strong>No Guarantee of Results</strong>
+                    <p>While reoo.xyz aims to deliver optimal outcomes, we do not guarantee specific results, lead quality, quantity, or conversions. Results may vary due to factors beyond our control.</p>
+                </li>
+                <li>
+                    <strong>Lead Generation and Scams</strong>
+                    <p>reoo.xyz is not responsible for any fraudulent or scam-related activity arising from lead generation efforts. The Client acknowledges the risks and assumes full responsibility for interactions and transactions with leads.</p>
+                </li>
+                <li>
+                    <strong>Non-Solicitation Clause</strong>
+                    <p>The Client agrees not to bypass reoo.xyz by directly engaging with any team member, contractor, or vendor introduced by reoo.xyz for any service, during the agreement and for 12 months after termination. Any attempt will result in immediate service suspension, withholding of access to work, and retention of pending or prepaid fees.</p>
+                </li>
+                <li>
+                    <strong>Confidentiality</strong>
+                    <p>Both parties agree to maintain the confidentiality of all non-public information, including strategies, financial details, and proprietary data shared during the agreement.</p>
+                </li>
+                <li>
+                    <strong>Termination</strong>
+                    <p>Either party may terminate this agreement by providing 30 days' written notice. All fees for services rendered up to the termination date are non-refundable.</p>
+                </li>
+                <li>
+                    <strong>Limitation of Liability</strong>
+                    <p>The total liability of reoo.xyz for any claim arising out of this agreement shall not exceed the total fees paid by the Client in the 15 days preceding the incident.</p>
+                </li>
+                <li>
+                    <strong>Governing Law</strong>
+                    <p>This agreement is governed by the laws of Haryana, India.</p>
+                </li>
+                <li>
+                    <strong>Entire Agreement</strong>
+                    <p>These Terms and Conditions constitute the entire agreement between reoo.xyz and the Client, superseding all prior discussions and understandings.</p>
+                </li>
+            </ol>
+            <p style="text-align: center; margin-top: 40px; font-size: 0.9rem; color: #b0b0b0;">All rights reserved.</p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        &copy; 2025 Reoo XYZ. All rights reserved.
+    </footer>
+</body>
+</html>

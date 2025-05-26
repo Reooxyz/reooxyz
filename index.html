@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reoo.xyz – Facebook Ads & Lead Generation Agency</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0B0C10;
+            color: #f1f1f1;
+            scroll-behavior: smooth;
+        }
+
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h2.section-title {
+            color: #D4AF37;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1400&q=80') center center / cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 40px 20px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            color: #D4AF37;
+            background-color: rgba(0,0,0,0.7);
+            padding: 15px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            margin-bottom: 20px;
+            position: relative; /* For animation */
+        }
+
+        .hero h1 .animated-o {
+            display: inline-block;
+            animation: pulse-o 2s infinite alternate;
+        }
+
+        @keyframes pulse-o {
+            0% { color: #D4AF37; transform: scale(1); }
+            100% { color: #ffe4a0; transform: scale(1.05); }
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: #f1f1f1;
+            margin-top: -15px; /* Adjust as needed to pull closer to H1 */
+            margin-bottom: 20px;
+            background-color: rgba(0,0,0,0.6);
+            padding: 8px 15px;
+            border-radius: 8px;
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            background-color: rgba(0,0,0,0.6);
+            padding: 12px 20px;
+            border-radius: 8px;
+            max-width: 800px;
+            margin-top: 15px;
+            line-height: 1.4;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-weight: 600;
+        }
+
+        .cta-button {
+            background-color: #D4AF37;
+            color: #000;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            margin-top: 30px;
+            text-decoration: none; /* For the link */
+            display: inline-block; /* For the link to behave like a block */
+        }
+
+        .cta-button:hover {
+            background-color: #b38f30;
+            transform: translateY(-3px);
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-img, .about-text {
+            flex: 1;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        /* Services Section */
+        .services-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: #1F2833;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            width: 280px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .card h3 {
+            color: #D4AF37;
+            margin-bottom: 10px;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Testimonials Section */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-content: center;
+            padding-top: 30px;
+        }
+
+        .testimonial-card {
+            background-color: #1F2833;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            border-left: 5px solid #D4AF37;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+
+        .testimonial-card blockquote {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+            color: #e0e0e0;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            border: 2px solid #D4AF37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .author-details {
+            text-align: left;
+        }
+
+        .author-details strong {
+            display: block;
+            font-size: 1.15rem;
+            color: #D4AF37;
+            margin-bottom: 3px;
+        }
+
+        .author-details span {
+            font-size: 0.9rem;
+            color: #b0b0b0;
+        }
+
+        /* Contact Section / Form */
+        .contact-form {
+            background-color: #1F2833;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .contact-form iframe {
+            width: 100%;
+            height: 500px; /* Adjust height as needed for the embedded form */
+            border: none;
+            border-radius: 8px;
+        }
+
+        /* Popup Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #1F2833;
+            margin: 15% auto;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            position: relative;
+            transform: scale(0.9);
+            opacity: 0;
+            animation: modal-fade-in 0.3s forwards;
+        }
+
+        @keyframes modal-fade-in {
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-content h3 {
+            color: #D4AF37;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .modal-content .checkmark-circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #D4AF37;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: checkmark-bounce 0.6s forwards 0.3s;
+        }
+
+        .modal-content .checkmark-circle svg {
+            width: 40px;
+            height: 40px;
+            color: #0B0C10;
+        }
+
+        @keyframes checkmark-bounce {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: #f1f1f1;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0B0C10;
+            text-align: center;
+            padding: 30px;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid #1F2833;
+        }
+
+        .footer nav a {
+            color: #D4AF37;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .footer nav a:hover {
+            color: #f1f1f1;
+        }
+
+        .footer p {
+            margin-top: 15px;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+                padding: 10px 20px;
+            }
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+            .hero h2 {
+                font-size: 1.6rem;
+                padding: 10px 15px;
+            }
+            .hero p {
+                font-size: 0.9rem;
+                padding: 10px 15px;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .services-cards, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            .card, .testimonial-card {
+                width: 90%;
+                margin: auto;
+            }
+        }
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .hero .tagline {
+                font-size: 1rem;
+            }
+            .hero h2 {
+                font-size: 1.4rem;
+            }
+            section {
+                padding: 50px 15px;
+            }
+            .modal-content {
+                width: 90%;
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <h1>re<span class="animated-o">o</span>o.xyz</h1>
+        <p class="tagline">We run Facebook Ads that drive leads, not just clicks.</p>
+        <h2>Struggling to Get Leads? We Can Help.</h2>
+        <p>At reoo.xyz, we manage Facebook Ads to reach the right people at the right time - helping your business grow.</p>
+        <a href="#contact-form-section" class="cta-button">Get a Free Strategy Call</a>
+    </header>
+
+    <section id="about">
+        <h2 class="section-title">About reoo.xyz</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>We are a high-end digital marketing agency with a flair for excellence and detail. Our services are tailored for elite brands looking to dominate their digital presence through strategy, style, and performance.</p>
+                <p style="margin-top: 15px;">Innovation meets sophistication with reoo.xyz. We create experiences that captivate, engage, and convert.</p>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1549490349-f03310065096?auto=format&fit=crop&w=600&q=80" alt="About Reoo XYZ - Luxury Office">
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-cards">
+            <div class="card">
+                <h3>Facebook Ads Campaign Management</h3>
+                <p>We handle the end-to-end management of your Facebook Ad campaigns for optimal performance.</p>
+            </div>
+            <div class="card">
+                <h3>Audience Targeting & Research</h3>
+                <p>We identify and target the most profitable audiences to maximize your ad spend and lead quality.</p>
+            </div>
+            <div class="card">
+                <h3>Ad Copywriting & Creatives</h3>
+                <p>Crafting compelling ad copy and engaging visuals that resonate with your target market.</p>
+            </div>
+            <div class="card">
+                <h3>Funnel Optimization</h3>
+                <p>Optimizing your sales funnel to ensure a smooth journey from click to conversion.</p>
+            </div>
+            <div class="card">
+                <h3>Lead Generation Strategy</h3>
+                <p>Developing a comprehensive strategy to consistently generate high-quality leads for your business.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <h2 class="section-title">Client Testimonials</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <blockquote>
+                    “Our business saw a steady increase in inquiries after working with reoo.xyz.”
+                </blockquote>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=60&q=80" alt="Profile of Alex Johnson">
+                    <div class="author-details">
+                        <strong>Alex Johnson</strong>
+                        <span>Business Owner</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>
+                    “The ad campaigns were well-targeted and helped us improve our lead quality.”
+                </blockquote>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1499557342672-d5b78f8448f7?auto=format&fit=crop&w=60&q=80" alt="Profile of Sophia Chen">
+                    <div class="author-details">
+                        <strong>Sophia Chen</strong>
+                        <span>Marketing Manager</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <blockquote>
+                    “reoo.xyz guided us through Facebook Ads setup and strategy. It was a helpful, collaborative process.”
+                </blockquote>
+                <div class="testimonial-author">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=60&q=80" alt="Profile of Marcus Thorne">
+                    <div class="author-details">
+                        <strong>Marcus Thorne</strong>
+                        <span>Startup Founder</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-form-section">
+        <h2 class="section-title">Get Your Free Strategy Call</h2>
+        <div class="contact-form">
+            <iframe src="https://surveyheart.com/form/683471f20ca6760c5e4d5f53" id="surveyheart-form"></iframe>
+        </div>
+    </section>
+
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <div class="checkmark-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M9.707 16.707a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L9 14.586l6.293-6.293a1 1 0 011.414 1.414l-7 7a1 1 0 01-.707.293z"/>
+                </svg>
+            </div>
+            <h3>Thank you for your details!</h3>
+            <p>We'll get back to you shortly.</p>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <nav>
+            <a href="about.html">About Us</a>
+            <a href="terms.html">Terms & Conditions</a>
+            <a href="policy.html">Privacy Policy</a>
+            <a href="refund.html">Refund Policy</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <p>&copy; 2025 reoo.xyz. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('successModal');
+            const closeModal = document.querySelector('.close-button');
+
+            function showModal() {
+                modal.style.display = 'flex';
+                const checkmarkCircle = modal.querySelector('.checkmark-circle');
+                checkmarkCircle.style.opacity = 0;
+                checkmarkCircle.style.transform = 'scale(0.5)';
+                void checkmarkCircle.offsetWidth;
+                checkmarkCircle.style.animation = 'none';
+                setTimeout(() => {
+                    checkmarkCircle.style.animation = 'checkmark-bounce 0.6s forwards 0.3s';
+                }, 10);
+            }
+
+            function hideModal() {
+                modal.style.display = 'none';
+            }
+
+            if (closeModal) {
+                closeModal.addEventListener('click', hideModal);
+            }
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    hideModal();
+                }
+            });
+
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
